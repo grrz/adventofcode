@@ -4,8 +4,17 @@
   "description": "Adventofcode 2021",
   "main": "index.ts",
   "license": "MIT",
+
+  "scripts": {
+    "go": "cd src; sh -c 'node -r ts-node/register 2021-${0}.ts'"
+  },
+  
   "dependencies": {
     "fs": "^0.0.1-security",
+    "ts-node": "^10.4.0",
     "typescript": "^4.5.2"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.11"
   }
 }
