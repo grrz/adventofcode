@@ -129,5 +129,5 @@ function B(s: string): number {
   return calcPacket(s, getPacket(s)).value;
 }
 
-getData('2021-16-input').forEach(s => console.log(A(s)));
-getData('2021-16-input').forEach(s => console.log(B(s)));
+getData('src/2021-16-input').forEach(s => console.log(A(s)));
+getData('src/2021-16-input').forEach(s => console.log(B(s)));

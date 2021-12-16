@@ -30,6 +30,7 @@ function calcFuel(data: number[], middle: number): number {
   }, 0);
 }
 
+// @ts-ignore
 function B(input: number[]): number {
   let fuel = 1e10;
   for (let i = 0; i < 1000; i++){
@@ -44,5 +45,5 @@ console.log(A(input07_test));
 console.log(B(input07_test));
 console.log(calcFuel(input07_test, 2));
 console.log('—');
-console.log(A(input));
-console.log(B(input));
+console.log(A(input07));
+console.log(B(input07));

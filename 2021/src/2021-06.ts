@@ -11,6 +11,7 @@ function day(school: { [id: number]: number }) {
   school[6] += n0;
 }
 
+// @ts-ignore
 function A(input: number[]): number {
   const school: { [id: number]: number } = {
     0: 0,
