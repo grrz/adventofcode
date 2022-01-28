@@ -1,0 +1,31 @@
+.  inp w     inp w     inp w     inp w     inp w      inp w     inp w      inp w     inp w     inp w     inp w     inp w     inp w     inp w
+.  mul x 0   mul x 0   mul x 0   mul x 0   mul x 0    mul x 0   mul x 0    mul x 0   mul x 0   mul x 0   mul x 0   mul x 0   mul x 0   mul x 0
+.  add x z   add x z   add x z   add x z   add x z    add x z   add x z    add x z   add x z   add x z   add x z   add x z   add x z   add x z
+.  mod x 26  mod x 26  mod x 26  mod x 26  mod x 26   mod x 26  mod x 26   mod x 26  mod x 26  mod x 26  mod x 26  mod x 26  mod x 26  mod x 26
+*  div z 1   div z 1   div z 1   div z 1   div z 26   div z 1   div z 26   div z 1   div z 26  div z 26  div z 1   div z 26  div z 26  div z 26
+*  add x 14  add x 11  add x 12  add x 11  add x -10  add x 15  add x -14  add x 10  add x -4  add x -3  add x 13  add x -3  add x -9  add x -12
+.  eql x w   eql x w   eql x w   eql x w   eql x w    eql x w   eql x w    eql x w   eql x w   eql x w   eql x w   eql x w   eql x w   eql x w
+.  eql x 0   eql x 0   eql x 0   eql x 0   eql x 0    eql x 0   eql x 0    eql x 0   eql x 0   eql x 0   eql x 0   eql x 0   eql x 0   eql x 0
+.  mul y 0   mul y 0   mul y 0   mul y 0   mul y 0    mul y 0   mul y 0    mul y 0   mul y 0   mul y 0   mul y 0   mul y 0   mul y 0   mul y 0
+.  add y 25  add y 25  add y 25  add y 25  add y 25   add y 25  add y 25   add y 25  add y 25  add y 25  add y 25  add y 25  add y 25  add y 25
+.  mul y x   mul y x   mul y x   mul y x   mul y x    mul y x   mul y x    mul y x   mul y x   mul y x   mul y x   mul y x   mul y x   mul y x
+.  add y 1   add y 1   add y 1   add y 1   add y 1    add y 1   add y 1    add y 1   add y 1   add y 1   add y 1   add y 1   add y 1   add y 1
+.  mul z y   mul z y   mul z y   mul z y   mul z y    mul z y   mul z y    mul z y   mul z y   mul z y   mul z y   mul z y   mul z y   mul z y
+.  mul y 0   mul y 0   mul y 0   mul y 0   mul y 0    mul y 0   mul y 0    mul y 0   mul y 0   mul y 0   mul y 0   mul y 0   mul y 0   mul y 0
+.  add y w   add y w   add y w   add y w   add y w    add y w   add y w    add y w   add y w   add y w   add y w   add y w   add y w   add y w
+*  add y 16  add y 3   add y 2   add y 7   add y 13   add y 6   add y 10   add y 11  add y 6   add y 5   add y 11  add y 4   add y 4   add y 6
+.  mul y x   mul y x   mul y x   mul y x   mul y x    mul y x   mul y x    mul y x   mul y x   mul y x   mul y x   mul y x   mul y x   mul y x
+.  add z y   add z y   add z y   add z y   add z y    add z y   add z y    add z y   add z y   add z y   add z y   add z y   add z y   add z y
+
+w= ?
+z= prev || 0
+x= z % 26 + [14  11  12  11 -10  15 -14  10  -4  -3  13  -3  -9 -12]
+x= x == w ? 0 : 1
+z= z /      [ 1   1   1   1  26   1  26   1  26  26   1  26  26  26]
+z= z * (25 * x + 1)
+z= z + (w + [16   3   2   7  13   6  10  11   6   5  11   4   4   6]) * x
+
+...
+w= ?
+x= 0
+y= 0
